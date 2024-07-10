@@ -1,9 +1,15 @@
 // const axios = require("axios");
+//วีรวิชญ์ ยิ่งศิริธัญรัฐ 660612157
 import axios from "axios";
 
 /* assign interface/type to the function definition properly */
 const getUser = async (userId: number) => {
-  /* Your code here */
+  try {
+    let response =  await axios.get("https://jsonplaceholder.typicode.com/users/"+userId)
+  return  response.data.name 
+  } catch (error) {
+    return "INVALID USER ID"
+  }
 };
 
 //test case
